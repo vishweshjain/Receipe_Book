@@ -93,10 +93,12 @@ Stores user data, login state, and updates UI dynamically without any backend.
 ┗ 📜 script.js
 ```
 ---
-
-
-
----
 ## 🧑‍🍳 Author
 - Vishwesh Jain
+
+---
+
+Would you like me to add a **demo “Access Control GIF” section** (showing how login restricts recipe access)?  
+That would make your GitHub page look more interactive and professional.
+
 
