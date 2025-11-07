@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <h1>Receipe Book</h1>
+        <div class="flex">
+          <a href="receipe.html">
+            <button class="btn">Home</button>
+          </a>
+          <!-- <a href="login.html">
+            <button class="btn btn-red-sm">Log In</button>
+          </a> -->
+        </div>
+      </nav>
+
+      <div class="box"></div>
+
+      <div class="login">
+        <div class="text">
+          <h1>Sign Up</h1>
+          <form class="input" id="signup">
+            <input type="text" id="userName" placeholder="Enter Full Name" required />
+            <input type="email" id="userEmail" placeholder="Enter Email Id" required />
+            <input type="password" id="password" placeholder="Enter Password" required />
+            <input type="password" id="ConfirmPassword" placeholder="Enter Confirm Password" required />
+
+            <button type="submit">Register </button>
+            <!-- <a href="login.html"> <button type="submit">Go Login </button> </a> -->
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+       
+      document.getElementById('signup').addEventListener('submit', function(e) {
+          e.preventDefault(); // not allow to page refresh
+
+          const userName = document.getElementById('userName').value.trim();
+          const userEmail = document.getElementById('userEmail').value.trim();
+          const password = document.getElementById('password').value.trim();
+          const confirmPassword = document.getElementById('ConfirmPassword').value.trim();
+
+          if(password !== confirmPassword){
+              alert("Passwords do not match!");
+              return;
+          }
+
+          // Store user details in localStorage
+          const user = {
+              name: userName,
+              email: userEmail,
+              password: password
+          };
+          
+
+          localStorage.setItem('user', JSON.stringify(user));
+
+          alert("Registration Successful! Please log in.");
+          window.location.href = 'login.html'; 
+      });
+      </script>
+
+  </body>
+</html>

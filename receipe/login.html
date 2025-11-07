@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <h1>Receipe Book</h1>
+        <div class="flex">
+          <a href="receipe.html">
+            <button class="btn">Home</button>
+          </a>
+          <!-- <a href="signup.html">
+            <button class="btn btn-red-sm">sign In</button>
+          </a> -->
+        </div>
+      </nav>
+
+      <div class="box"></div>
+
+      <div class="login">
+        <div class="text">
+          <h1>Log In</h1>
+          <form class="input" id="login">
+            <input type="text" id="loginId" placeholder="Enter Id" required />
+            <input
+              type="password"
+              id="loginpassword"
+              placeholder="Enter Password"
+              required
+            />
+            <button type="submit"> GO</button>
+          </form>
+          <div class="link">
+            <a href="#">Forget Password</a>
+            <a href="signup.html">Registration</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        document.getElementById('login').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page refresh
+
+            const email = document.getElementById('loginId').value.trim();
+            const password = document.getElementById('loginpassword').value.trim();
+
+            // Get user from localStorage
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            if (!storedUser) {
+                alert("No user found. Please sign up first.");
+                return;
+            }
+
+            if (email === storedUser.email && password === storedUser.password) {
+                alert("Login successful!");
+                localStorage.setItem('isLoggedIn', true);
+                localStorage.setItem('loggedUser', storedUser.name) // Track login state
+                window.location.href = 'receipe.html'; // Redirect to main page
+            } else {
+                alert("Invalid email or password!");
+            }
+        });
+    </script>
+
+  </body>
+</html>

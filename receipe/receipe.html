@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipe book clone</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    <div class="main">
+        <nav>
+          <h1>Receipe Book</h1>
+          <div class="flex">
+            <a href="login.html">
+              <button class="btn" id="loginbtn" >Log in</button>
+            </a>
+            <a href="signup.html">
+              <button class="btn btn-red-sm" id="signupbtn">sign Up</button>
+            </a>
+          </div>
+        </nav>
+
+        <div class="box"></div>
+
+          <div class="hero">
+            <div class="content">
+              <h1>From Our Kitchen to <br><span>Your Heart.</span></h1>
+              <p>Your next favorite recipe is just a click away! Explore easy, tasty, and healthy dishes that turn everyday meals into delicious experiences.</p>
+            </div>
+        </div>
+
+        <!-- <p>Discover the joy of cooking with our handpicked recipes made simple for everyone. From quick bites to festive feasts, explore flavors that bring happiness to your plate every day.</p> -->
+        <!-- <div class="hero-btn">
+            <input type="text" placeholder="Email Address" class="text" />
+            <button class="btn btn-red">Get started &gt</button>
+          </div> -->
+      
+    </div>
+
+    <h1 class="section1">Pick Your Favorite Dish</h1>
+
+     <div class="grid">
+          <div class="card">
+            <img src="images/image1.jpg" alt="Chhole bhature">
+            <span>Chole Bhature Feast</span>
+            <a href="receipes.html?id=1"><button>Read</button></a>
+
+          </div>
+
+          <div class="card">
+            <img src="images/image2.jpg" alt="Chhole bhature" >
+            <span>Pav Bhaji Street Style</span>
+            <a href="receipes.html?id=2"><button>Read</button></a>
+
+          </div>
+
+          <div class="card">
+            <img src="images/image3.jpg" alt="Chhole bhature">
+            <span>Dal Tadka Bliss</span>
+            <a href="receipes.html?id=3"><button> Read </button></a>
+          </div>
+
+          <div class="card">
+            <img src="images/image4.jpg" alt="Chhole bhature">
+            <span>Gujarati Khichdi</span>
+            <a href="receipes.html?id=4"><button> Read </button></a>
+          </div>
+
+          <div class="card">
+            <img src="images/image5.jpg" alt="Chhole bhature" >
+            <span>Bombay style Vadapav</span>
+            <a href="receipes.html?id=5"><button> Read </button></a>
+            
+          </div>
+
+          <div class="card">
+            <img src="images/image6.jpg" alt="Chhole bhature">
+            <span>Mast Paneer Chilli</span>
+            <a href="receipes.html?id=6"><button> Read </button></a>
+            
+          </div>
+        </div>
+
+    <!-- </div> -->
+
+        
+
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h1>Receipe Book</h1>
+
+                <!-- <p>We are Meena Plastics, a business with ISO 9001/2015 certification. We are well-known and reputable for providing the highest quality carry bags, roll garbage bags, bio-hazardous bags, and other products.</p> -->
+             
+           
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Phone: <span>+91 77777 - 77777</span></p>
+                <p>Email: receipebook882@gmail.com
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function(){
+        const loginbtn = document.getElementById('loginbtn')
+        const signupbtn = document.getElementById('signupbtn')
+
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const userName = localStorage.getItem('loggedUser');
+
+        if(isLoggedIn && userName){
+          loginbtn.textContent = 'LogOut'
+          loginbtn.onclick = function(){
+
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('loggedUser');
+            alert('Logged out successfully!');
+            window.location.href = 'receipe.html';
+
+          }
+          signupbtn.textContent = userName;
+          signupbtn.disabled = true; // Disable sign up
+        }
+
+      })
+    </script>
+
+  </body>
+</html>

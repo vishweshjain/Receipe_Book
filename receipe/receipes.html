@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipes</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Hero Section */
+        .hero {
+        height: 350px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        }
+
+        .hero .overlay {
+        background: rgba(0,0,0,0.7);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .hero h1 {
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        z-index: 1;
+        }
+
+        /* Ingredients & Instructions */
+        section {
+        width: 80%;
+        max-width: 800px;
+        margin: 40px auto;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        }
+
+        h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #333;
+        }
+
+        ul, ol {
+        padding-left: 20px;
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="nav">
+        <nav>
+          <h1>Receipe Book</h1>
+          <div class="flex">
+            <a href="receipe.html">
+              <button class="btn" >Home</button>
+            </a>
+            <!-- <a href="signup.html">
+              <button class="btn btn-red-sm">sign In</button>
+            </a> -->
+          </div>
+        </nav>
+    </div>
+            <!-- <div class="main"> -->
+        <header class="hero" id="hero">
+        
+        <div class="overlay">
+            <h1 id="receipe_title"></h1>
+        </div>
+        </header>
+
+        <section class="ingredients" id="ingredients"></section>
+        <section class="instructions" id="instructions"></section>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h1>Receipe Book</h1>
+
+                <!-- <p>We are Meena Plastics, a business with ISO 9001/2015 certification. We are well-known and reputable for providing the highest quality carry bags, roll garbage bags, bio-hazardous bags, and other products.</p> -->
+             
+           
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Phone: <span>+91 77777 - 77777</span></p>
+                <p>Email: receipebook882@gmail.com
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+      const recipes = [
+  {
+    id: 1,
+    title: "Chole Bhature Feast",
+    image: "./images/image1.jpg",
+    ingredients: [
+      "1 cup chickpeas",
+      "2 cups flour",
+      "1 tsp turmeric",
+      "1 tsp garam masala",
+      "Salt to taste",
+      "Oil for frying"
+    ],
+    instructions: [
+      "Soak chickpeas overnight.",
+      "Boil chickpeas with salt and spices.",
+      "Prepare dough for bhature with flour and water.",
+      "Roll and deep-fry bhature until golden.",
+      "Serve hot with spicy chole and salad."
+    ]
+  },
+  {
+    id: 2,
+    title: "Pav Bhaji Street Style",
+    image: "./images/image2.jpg",
+    ingredients: [
+      "4 pav buns",
+      "2 cups mixed vegetables (potato, peas, cauliflower)",
+      "3 tbsp butter",
+      "2 tsp pav bhaji masala",
+      "Salt and lemon"
+    ],
+    instructions: [
+      "Boil and mash vegetables.",
+      "Cook with butter, spices, and pav bhaji masala.",
+      "Toast pav buns in butter.",
+      "Serve hot with lemon wedges and chopped onion."
+    ]
+  },
+  {
+    id: 3,
+    title: "Dal Tadka Bliss",
+    image: "./images/image3.jpg",
+    ingredients: [
+      "1 cup toor dal",
+      "2 tomatoes",
+      "1 onion",
+      "1 tsp turmeric",
+      "2 tbsp ghee",
+      "Mustard seeds, curry leaves"
+    ],
+    instructions: [
+      "Boil dal with turmeric and salt.",
+      "Prepare tadka with ghee, mustard seeds, and curry leaves.",
+      "Add chopped onion and tomato, sauté well.",
+      "Mix tadka with boiled dal and simmer.",
+      "Serve hot with rice or roti."
+    ]
+  },
+  {
+    id: 4,
+    title: "Gujarati Khichdi",
+    image: "./images/image4.jpg",
+    ingredients: [
+      "1 cup rice",
+      "1/2 cup moong dal",
+      "1 tsp turmeric",
+      "Ghee",
+      "Salt to taste"
+    ],
+    instructions: [
+      "Wash rice and dal together.",
+      "Cook with turmeric, salt, and enough water.",
+      "Drizzle ghee on top before serving.",
+      "Serve with curd, papad, and pickle."
+    ]
+  },
+  {
+    id: 5,
+    title: "Bombay Style Vada Pav",
+    image: "./images/image5.jpg",
+    ingredients: [
+      "4 pav buns",
+      "4 potato vadas",
+      "Green chutney",
+      "Tamarind chutney",
+      "Dry garlic chutney"
+    ],
+    instructions: [
+      "Prepare potato mixture and make vadas.",
+      "Deep fry vadas until golden.",
+      "Slice pav and spread chutneys.",
+      "Place vada inside pav and press lightly.",
+      "Serve with fried green chilies."
+    ]
+  },
+  {
+    id: 6,
+    title: "Mast Paneer Chilli",
+    image: "./images/image6.jpg",
+    ingredients: [
+      "200g paneer cubes",
+      "1 onion",
+      "1 capsicum",
+      "Soy sauce",
+      "Green chilies",
+      "Cornflour slurry"
+    ],
+    instructions: [
+      "Marinate paneer and shallow fry until golden.",
+      "Stir fry onion, capsicum, and chilies.",
+      "Add soy sauce and spices.",
+      "Add paneer and mix well with cornflour slurry.",
+      "Serve hot as starter or with fried rice."
+    ]
+  }
+];
+
+
+      const params = new URLSearchParams(window.location.search);
+      const receipeID = parseInt(params.get("id")) ;
+      const recipe = recipes.find((r) => r.id === receipeID);
+      
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+        if (receipeID !== 1 && !isLoggedIn) {
+            alert("Please log in to access this recipe!");
+            window.location.href = "login.html"; // redirect tp login page fpr login
+        }
+
+
+      if (recipe) {
+        document.getElementById("nav").style.backgroundColor = "black"
+        document.getElementById("nav").style.opacity = 0.9
+
+        // Set hero background image
+        document.getElementById("hero").style.backgroundImage = `url(${recipe.image})`;
+
+        // Set title
+        document.getElementById("receipe_title").innerText = recipe.title;
+
+        // Ingredients
+        document.getElementById("ingredients").innerHTML = `
+            <h2>Ingredients</h2>
+            <ul>${recipe.ingredients.map(item => `<li>${item}</li>`).join("")}</ul>
+        `;
+
+        // Instructions
+        document.getElementById("instructions").innerHTML = `
+            <h2>Instructions</h2>
+            <ol>${recipe.instructions.map(step => `<li>${step}</li>`).join("")}</ol>
+        `;
+        }
+     else {
+        document.body.innerHTML = "<h1>Recipe not found</h1>";
+      }
+    </script>
+  </body>
+</html>
