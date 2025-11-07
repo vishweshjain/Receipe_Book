@@ -22,10 +22,7 @@ It allows users to explore delicious dishes, **sign up or log in to unlock all r
    - Redirects to homepage and resets buttons to default state.
 
 ---
-## 🚀 Live Demo
 
-
----
 ## ✨ Features
 
 ✅ **User Authentication (Frontend)**  
